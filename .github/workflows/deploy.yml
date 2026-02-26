@@ -25,13 +25,13 @@ jobs:
         run: |
           git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
           mkdir -p ./data
-          cp temp-data/data/projects.js ./data/projects.json
+          cp temp-data/data/projects.js ./data/projects.js
           rm -rf temp-data
 
       - name: Minify projects.js
         run: |
           npm install -g terser
-          terser ./data/projects.json -o ./data/projects.json --compress --mangle
+          terser ./data/projects.js -o ./data/projects.js --compress --mangle
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
