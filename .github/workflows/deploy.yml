@@ -27,6 +27,11 @@ jobs:
           mkdir -p ./data
           cp temp-data/data/projects.js ./data/projects.js
           rm -rf temp-data
+          
+      - name: Minify projects.js
+        run: |
+          npm install -g terser
+          terser ./data/projects.js -o ./data/projects.js --compress --mangle
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

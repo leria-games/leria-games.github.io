@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Projects</title>
+</head>
 <body>
-    Hello world!
+  <div id="projects"></div>
+
   <script src="./data/projects.js"></script>
   <script>
-    console.log(projects);
+    const container = document.getElementById("projects");
+
+    projectData.forEach(project => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <h2>${project.title}</h2>
+        <p>${project.description}</p>
+      `;
+      container.appendChild(div);
+    });
   </script>
 </body>
 </html>
