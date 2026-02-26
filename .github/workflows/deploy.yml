@@ -1,0 +1,25 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout public repo
+        uses: actions/checkout@v4
+
+      - name: Clone private data repo
+        run: |
+          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/vkirtsou/YOUR_PRIVATE_REPO.git temp-data
+          mkdir -p ./data
+          cp temp-data/projects.js ./data/projects.js
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          exclude_assets: '.github,temp-data'
