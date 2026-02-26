@@ -14,7 +14,7 @@ jobs:
       - name: Clone private data repo
         run: |
           git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
-          cp temp-data/projects.js ./data/projects.js
+          cp temp-data/data/projects.js ./data/projects.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
