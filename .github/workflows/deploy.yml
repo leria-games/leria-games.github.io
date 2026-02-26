@@ -1,32 +1,3 @@
-name: Deploy Website
-
-on:
-  push:
-    branches: [ main ]
-
-permissions:
-  contents: write
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout public repo
-        uses: actions/checkout@v4
-
-      - name: Clone private data repo
-        run: |
-          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
-          cp temp-data/data/projects.js ./data/projects.js
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          exclude_assets: '.github,temp-data'
-
-
 name: Deploy Portfolio
 
 on:
@@ -53,7 +24,6 @@ jobs:
       - name: Inject private projects data
         run: |
           git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
-          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/YOUR_USERNAME/YOUR_PRIVATE_REPO.git temp-data
           mkdir -p ./data
           cp temp-data/data/projects.js ./data/projects.js
           rm -rf temp-data
