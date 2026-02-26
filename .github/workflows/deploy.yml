@@ -13,8 +13,7 @@ jobs:
 
       - name: Clone private data repo
         run: |
-          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/vkirtsou/YOUR_PRIVATE_REPO.git temp-data
-          mkdir -p ./data
+          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
           cp temp-data/projects.js ./data/projects.js
 
       - name: Deploy to GitHub Pages
