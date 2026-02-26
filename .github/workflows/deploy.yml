@@ -31,7 +31,7 @@ jobs:
       - name: Minify projects.js
         run: |
           npm install -g terser
-          terser ./data/projects.js -o ./data/projects.js --compress --mangle
+          terser ./data/projects.json -o ./data/projects.json --compress --mangle
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
