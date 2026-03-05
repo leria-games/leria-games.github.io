@@ -1,0 +1,8 @@
+node_modules/
+drafts/
+data/
+package-lock.json
+package.json
+.vscode
+*.code-workspace
+eslint.config.js

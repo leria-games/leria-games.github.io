@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Software Engineer & VR Developer specializing in training simulations, educational products, and interactive experiences.">
+  <title>Vasiliki Kirtsou | Software Engineer & VR Developer</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div id="projects"></div>
+  <div id="site-header"></div>
+  
+  <div class="header-section">
+    <div class="hero-content">
+      <h1>Vasiliki Kirtsou</h1>
+      <p class="hero-subtitle">Software Engineer &middot; VR Developer</p>
+      <p class="hero-intro">
+        Hello! This is a collection of projects I've contributed to throughout my professional career and academic years.
+      </p>
+    </div>
+  </div>
+  
+  <main>
+    <div class="main-content">
+      <section id="project-list">
+        <div id="section">
+          <h2 id="projects-title"><span id="projects-title-tag"></span><span class="projects-title-right-side">Projects</span></h2>
+        </div>
 
-  <script src="./data/projects.js"></script>
-  <script>
-    const container = document.getElementById("projects");
+        <div id="filter-tags" class="filter-tags"></div>
+        <div id="project-grid"></div>
+      </section>
+    </div>
+  </main>
 
-    projectData.forEach(project => {
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <h2>${project.title}</h2>
-        <p>${project.description}</p>
-      `;
-      container.appendChild(div);
-    });
-  </script>
+  <div id="site-footer"></div>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script type="module" src="./js/index.js"></script>
 </body>
 </html>
