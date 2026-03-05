@@ -24,9 +24,9 @@ jobs:
       - name: Inject private projects data
         run: |
           git clone --depth 1 --branch master https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/website-data.git temp-data
-          mkdir -p ./data
+          mkdir -p ./data ./assets
           cp temp-data/data/projects.js ./data/projects.js
-          cp temp-data/assets/* ./assets/*
+          cp -r temp-data/assets/* ./assets/
           rm -rf temp-data
 
       - name: Minify projects.js
