@@ -23,7 +23,7 @@ jobs:
 
       - name: Inject private projects data
         run: |
-          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com/leria-games/test-private-repo.git temp-data
+          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}git@github.com:leria-games/website-data.git temp-data
           mkdir -p ./data
           cp temp-data/data/projects.js ./data/projects.js
           rm -rf temp-data
@@ -31,19 +31,15 @@ jobs:
       - name: Minify projects.js
         run: |
           npm install -g terser
-          terser ./data/projects.js -o ./data/projects.js --compress --mangle
+          terser ./data/projects.js -o ./data/projects.js --compress
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
 
   deploy:
     environment:
@@ -55,3 +51,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
