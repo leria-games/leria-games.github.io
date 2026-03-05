@@ -21,7 +21,7 @@ export function createCard(project) {
     el('div', { class: 'project-card-container' },
       el('div', { class: 'project-card-thumbnail' },
         el('img', {
-          src: thumbnail?.src || '/assets/placeholder.png',
+          src: thumbnail?.src || '/data/assets/placeholder.png',
           alt: `${project.title} preview`
         })
       ),

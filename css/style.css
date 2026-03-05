@@ -20,8 +20,8 @@
   --color-shadow-hover-secondary: rgba(242, 174, 64, 0.15);
   --color-text-shadow: black;
 
-  --header-bg: url('/assets/bg.webp');
-  --external-link-icon: url('/assets/external_link.png');
+  --header-bg: url('/data/assets/bg.webp');
+  --external-link-icon: url('/data/assets/external_link.png');
 
   /* Spacing */
   --space-2xs: 0.25rem;
@@ -1171,7 +1171,7 @@ a:focus:not(:focus-visible) {
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url("/assets/fonts/SpaceGrotesk-Regular.woff2") format("woff2");
+  src: url("/data/assets/fonts/SpaceGrotesk-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -1179,7 +1179,7 @@ a:focus:not(:focus-visible) {
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url("/assets/fonts/SpaceGrotesk-Bold.woff2") format("woff2");
+  src: url("/data/assets/fonts/SpaceGrotesk-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
