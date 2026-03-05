@@ -23,7 +23,7 @@ jobs:
 
       - name: Inject private projects data
         run: |
-          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}git@github.com:leria-games/website-data.git temp-data
+          git clone https://x-access-token:${{ secrets.PRIVATE_REPO_TOKEN }}@github.com:leria-games/website-data.git temp-data
           mkdir -p ./data
           cp temp-data/data/projects.js ./data/projects.js
           rm -rf temp-data
